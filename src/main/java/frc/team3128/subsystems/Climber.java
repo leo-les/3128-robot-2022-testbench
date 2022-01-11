@@ -44,16 +44,17 @@ public class Climber extends SubsystemBase {
     }
 
     public void moveStraightClimberDown() {
-        m_climbMotorD1.set(-Constants.ClimberConstants.CLIMBER_POWER);
+        m_climbMotorS1.set(-Constants.ClimberConstants.CLIMBER_POWER);
     }
     public void moveDiagonalClimberDown() {
         m_climbMotorD1.set(-Constants.ClimberConstants.CLIMBER_POWER);
     }        
-    public void stopDiagonalClimber() {
-        m_climbMotorD1.set(0);
-    }
     public void stopStraightClimber() {
         m_climbMotorS1.set(0);
     }
+    public void stopDiagonalClimber() {
+        m_climbMotorD1.set(0);
+    }
+    
 
 }
