@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc.team3128.commands.ArcadeDrive;
 import frc.team3128.commands.TestDrive;
 import frc.team3128.common.hardware.input.NAR_Joystick;
-import frc.team3128.subsystems.Climber;
+import frc.team3128.subsystems.TravClimber;
 import frc.team3128.subsystems.NAR_Drivetrain;
 import frc.team3128.subsystems.TestBenchSubsystem;
 
@@ -26,7 +26,6 @@ public class RobotContainer {
     private NAR_Joystick m_rightStick;
 
     private CommandScheduler m_commandScheduler = CommandScheduler.getInstance();
-    private Climber m_climber = Climber.getInstance();
     private Command auto;
 
     private boolean DEBUG = false;
@@ -50,21 +49,6 @@ public class RobotContainer {
         //m_rightStick.getButton(1).whenActive(new RunCommand(testBenchSubsystem::drive,testBenchSubsystem));
         //m_rightStick.getButton(1).whenReleased(new RunCommand(testBenchSubsystem::stop,testBenchSubsystem));
         
-        //Straight Climb Up
-        m_rightStick.getButton(7).whenActive(new RunCommand(m_climber::moveStraightClimberUp,m_climber));
-        m_rightStick.getButton(7).whenReleased(new RunCommand(m_climber::stopStraightClimber,m_climber));
-        
-        //Straight Climb Down
-        m_rightStick.getButton(8).whenActive(new RunCommand(m_climber::moveStraightClimberDown,m_climber));
-        m_rightStick.getButton(8).whenReleased(new RunCommand(m_climber::stopStraightClimber,m_climber));
-
-        //Diagonal Climb Up
-        m_rightStick.getButton(9).whenActive(new RunCommand(m_climber::moveDiagonalClimberUp,m_climber));
-        m_rightStick.getButton(9).whenReleased(new RunCommand(m_climber::stopDiagonalClimber,m_climber));
-        
-        //Diagonal Climb Down
-        m_rightStick.getButton(10).whenActive(new RunCommand(m_climber::moveDiagonalClimberDown,m_climber));
-        m_rightStick.getButton(10).whenReleased(new RunCommand(m_climber::stopDiagonalClimber,m_climber));
     }
 
     private void dashboardInit() {
