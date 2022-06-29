@@ -63,7 +63,7 @@ public class RobotContainer {
         //Basic color sensor triggers that sense a single ball position, used to form the more complicated triggers below
         isBallBottom = new Trigger(m_colorSensor::getBallBottomLocation);
 
-        isBallTop = new Trigger(m_colorSensor::getBallBottomLocation);
+        isBallTop = new Trigger(m_colorSensor::getBallTopLocation);
 
         isBallWrongBottom = new Trigger(m_colorSensor::getWrongBallBottom);
 
@@ -105,12 +105,16 @@ public class RobotContainer {
             
     }
     public void updateDashboard(){
-        SmartDashboard.putNumber("Bottom prox", colorSensor.getProximity0());
-        SmartDashboard.putNumber("Top prox", colorSensor.getProximity1());
         SmartDashboard.putBoolean("Bottom Location", isBallBottom.getAsBoolean());
         SmartDashboard.putBoolean("Top Location", isBallTop.getAsBoolean());
         SmartDashboard.putBoolean("Bottom Wrong", isBallWrongBottom.getAsBoolean());
         SmartDashboard.putBoolean("Top Wrong", isBallWrongTop.getAsBoolean());
+        SmartDashboard.putBoolean("isBallWrongBoth", isBallWrongBoth.getAsBoolean());
+        SmartDashboard.putBoolean("isBallWrongBottomAndTopCorrect", isBallWrongBottomAndTopCorrect.getAsBoolean());
+        SmartDashboard.putBoolean("isBallWrongTopAndBottomCorrect", isBallWrongTopAndBottomCorrect.getAsBoolean());
+        SmartDashboard.putBoolean("isBallWrongTopAndBottomMissing", isBallWrongTopAndBottomMissing.getAsBoolean());
+        
+
 
     }
 
