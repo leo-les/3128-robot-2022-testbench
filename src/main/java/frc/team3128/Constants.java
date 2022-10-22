@@ -39,6 +39,9 @@ public class Constants {
 
         public static final Boolean GYRO_REVERSED = false;
     }
+    public static class ColorSensorConstants {
+        public static final double COLOR_SENSOR_TOLERANCE = 1.5;
+    }
 
     public static class VisionContants {
 

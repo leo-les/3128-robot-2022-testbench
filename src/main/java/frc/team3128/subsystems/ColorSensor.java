@@ -5,7 +5,7 @@ import frc.team3128.common.hardware.PicoColorSensor;
 import frc.team3128.common.hardware.PicoColorSensor.RawColor;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DriverStation; 
-import static frc.team3128.Constants.VisionConstants.*;
+import static frc.team3128.Constants.ColorSensorConstants.*;
 
 public class ColorSensor extends SubsystemBase {
 
